@@ -15,7 +15,8 @@ def form():
 
 
 def clock():
-   print(str(datetime.now())) 
+    hour=datetime.now().strftime('%H')
+    print(hour)
     
 
 
@@ -23,13 +24,6 @@ def clock():
 
 
     
-
-
-
-
-
-
-
 
 
 

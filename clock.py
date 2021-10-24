@@ -4,20 +4,14 @@ import tkinter as tk
 from tkinter.constants import S
 
 
-
-
-def form():
-    r=tk.Tk()
+def clock():
+    hour=datetime.now().strftime('%H')
+    print(hour)
+     r=tk.Tk()
     r.title('Clock')
 
 
     r.mainloop()
-
-
-def clock():
-    hour=datetime.now().strftime('%H')
-    print(hour)
-    
 
 
 

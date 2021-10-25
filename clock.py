@@ -10,14 +10,14 @@ r.geometry("420x150")
 text_font=("Helvetical", 30,'bold')
 background='#add8e6'
 c_label=tk.Label(r,font=text_font,bg=background)
-c_label.grid(row=3,column=1)
+c_label.place(relx=0.05, rely=0.05, relheight=0.9, relwidth=0.9)
 
 
 
 
 def clock():
     
-    now=datetime.now().strftime('%H:%M:%S %d/%m/%Y')
+    now=datetime.now().strftime('%H:%M:%S %m/%d/%Y')
     c_label.config(text=now)
     c_label.after(200,clock)
 

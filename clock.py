@@ -11,9 +11,9 @@ def clock():
 
 
     
-    #r=tk.Tk()
-    #r.title('Clock')
-    #r.mainloop()
+    r=tk.Tk()
+    r.title('Clock')
+    r.mainloop()
 
 
 

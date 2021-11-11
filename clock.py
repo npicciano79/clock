@@ -16,8 +16,18 @@ c_label.place(relx=0.05, rely=0.05, relheight=0.9, relwidth=0.9)
 def clock():
     
     now=datetime.now().strftime('%H:%M:%S %m/%d/%Y')
-    c_label.config(text=now)
-    c_label.after(200,clock)
+    #convert hour from military to standard
+    n_hour=int(now.split(':')[0])
+    setting="PM"
+    if n_hour<12:
+        setting="AM"
+    elif n_hour>12:
+        n_hour=n_hour-12
+    
+    
+    print(f"hour: {n_hour} AM PM {setting}")
+    #c_label.config(text=now)
+    #c_label.after(200,clock)
   
 
 if __name__=="__main__":

@@ -1,4 +1,5 @@
 #digital clock 
+import time
 from datetime import datetime, time
 from time import gmtime
 import tkinter as tk
@@ -24,10 +25,15 @@ def clock():
     elif n_hour>12:
         n_hour=n_hour-12
     
+    min=now.split(':')[1]
+    sec=now.split(':',2)[1]
     
-    print(f"hour: {n_hour} AM PM {setting}")
-    #c_label.config(text=now)
-    #c_label.after(200,clock)
+    t_now=str(n_hour)+":"+min+":"+sec+" "+setting
+        
+    #print(f"time: {t_now} ")
+    c_label.config(text=t_now)
+    c_label.after(200,clock)
+    
   
 
 if __name__=="__main__":

@@ -1,8 +1,8 @@
 #digital clock 
 #C:/Users/npicc/Documents/python/python.exe c:/Users/npicc/Documents/Coding/projects/clock/clock.py
-import time
+
 from datetime import datetime, time
-from time import gmtime
+#from time import gmtime
 import tkinter as tk
 
 r=tk.Tk()
@@ -21,7 +21,7 @@ day_label.place(relx=0.55, rely=0.65, relheight=0.2, relwidth=0.40)
 
 
 
-def clock():
+def makeclock():
     now=datetime.now().strftime('%H:%M:%S %m/%d/%Y')
     time,date=now.split()
     day_index=datetime.today().weekday()
@@ -37,7 +37,9 @@ def clock():
         n_hour=n_hour-12
 
     min=time.split(':')[1]
-    sec=time.split(':',2)[1]
+    sec=time.split(':',2)[2]
+    #print(f"hour: {n_hour} min {min} sec {sec}")
+
 
     t_now=str(n_hour)+":"+min+":"+sec+" "+setting
 
@@ -46,13 +48,10 @@ def clock():
     
     date_label.config(text=date)
     day_label.config(text=days[day_index])
-    r.after(1000,clock)
+    c_label.after(1000,makeclock)
 
 
-
-
-
-clock()
+makeclock()
 r.mainloop()
 
 
